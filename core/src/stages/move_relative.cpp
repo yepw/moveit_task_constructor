@@ -272,6 +272,8 @@ COMPUTE:
 					// arrow tip at goal pose
 					pos += quat * Eigen::Vector3d(-linear_norm, 0, 0);
 				}
+				// TODO: this seems to be the pose of the rigid earliest rigid link instead of the ik_frame?
+				// I see arrows at the wrist of a gripper instead of the specified tool-frame
 				tf::pointEigenToMsg(pos, m.pose.position);
 				tf::quaternionEigenToMsg(quat, m.pose.orientation);
 				solution.markers().push_back(m);
