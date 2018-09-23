@@ -188,10 +188,6 @@ TaskViewPrivate::TaskViewPrivate(TaskView *q_ptr)
 				QModelIndex child = parent.child(row, 0);
 				// expand inserted items
 				setExpanded(tasks_view, child, true);
-				// collapse up to first level
-				setExpanded(tasks_view, child, false, 1);
-				// expand inserted item
-				setExpanded(tasks_view, child, true, 0);
 			}
 			tasks_view->setExpanded(parent, true);  // expand parent group item
 		}
