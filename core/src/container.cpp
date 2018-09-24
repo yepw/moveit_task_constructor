@@ -635,6 +635,7 @@ void SerialContainer::traverse(const SolutionBase &start, const SolutionProcesso
 void WrappedSolution::fillMessage(moveit_task_constructor_msgs::Solution &solution,
                                   Introspection *introspection) const
 {
+	// TODO: this ignores the changed comment and cost
 	wrapped_->fillMessage(solution, introspection);
 }
 
