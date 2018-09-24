@@ -739,8 +739,9 @@ void ParallelContainerBase::validateConnectivity() const
 	for (const auto& child : pimpl()->children()) {
 		InterfaceFlags current = child->pimpl()->interfaceFlags();
 		children_interfaces |= current;  // compute union of all children interfaces
-		if ((current & my_interface) != current)
-			errors.push_back(*this, "interface of child '" + child->name() + "' doesn't match mine");
+		if ((current & my_interface) != current){
+			errors.push_back(*this, "interface of child '" + child->name() + "' (" + std::to_string(int(current)) + ") doesn't match mine (" + std::to_string(int(my_interface)) + ")");
+		}
 	}
 	// check that there is a child matching the expected push interfaces
 	if ((my_interface & GENERATE) != (children_interfaces & GENERATE))
