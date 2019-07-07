@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	visualization_msgs
 	rviz_marker_tools
+	tf
+	tf_conversions
 )
 
 catkin_package(
@@ -32,6 +34,7 @@ if ("${CMAKE_VERSION}" VERSION_LESS "3.1")
 else ()
 	set(CMAKE_CXX_STANDARD 14)
 endif ()
+
 
 set(PROJECT_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/include/moveit/task_constructor)
 
